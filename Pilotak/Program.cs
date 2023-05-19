@@ -11,11 +11,11 @@
             while (!streamReader.EndOfStream)
             {
                 string[] pilotaAdatai = streamReader.ReadLine().Split(";");
-                if (pilotaAdatai.Count() == 4)
+                if (pilotaAdatai[3] == "")
                 {
                     pilotakLista.Add(new Pilotak(pilotaAdatai[0], pilotaAdatai[1], pilotaAdatai[2]));
                 }
-                else if (pilotaAdatai.Count() == 3)
+                else
                 {
                     pilotakLista.Add(new Pilotak(pilotaAdatai[0], pilotaAdatai[1], pilotaAdatai[2], int.Parse(pilotaAdatai[3])));
                 }
@@ -32,6 +32,9 @@
                     Console.WriteLine($"\t{pilota.Nev} ({pilota.SzuletesiDatum})");
                 }
             }
+
+            Console.WriteLine($"6. feladat: {pilotakLista.OrderBy(p => p.Rajtszam).First().Nemzetiseg}");
+            Console.WriteLine($"7. feladat: ");
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Pilotak
             this.nev = nev;
             this.szuletesiDatum = szuletesiDatum;
             this.nemzetiseg = nemzetiseg;
+            this.rajtszam = int.MaxValue;
         }
 
         public string Nev { get => nev; }
